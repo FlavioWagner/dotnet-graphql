@@ -1,6 +1,6 @@
 ﻿namespace graphql.api.src.Application.Entities
 {
-    public partial class Ramo
+    public partial class Ramo : IEntity
     {
         public Ramo()
         {

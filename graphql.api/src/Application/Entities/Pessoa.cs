@@ -1,6 +1,6 @@
 ﻿namespace graphql.api.src.Application.Entities
 {
-    public partial class Pessoa
+    public partial class Pessoa : IEntity
     {
         public long Id { get; set; }
         public string Nome { get; set; } = null!;

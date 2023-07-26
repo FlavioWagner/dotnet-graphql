@@ -1,6 +1,6 @@
 ﻿namespace graphql.api.src.Application.Entities
 {
-    public partial class PessoaFisica
+    public partial class PessoaFisica : IEntity
     {
         public long Id { get; set; }
         public DateOnly? DataNascimento { get; set; }

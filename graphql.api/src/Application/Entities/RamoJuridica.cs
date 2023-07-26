@@ -1,6 +1,6 @@
 ﻿namespace graphql.api.src.Application.Entities
 {
-    public partial class RamoJuridica
+    public partial class RamoJuridica : IEntity
     {
         public long Id { get; set; }
         public long IdPessoaJuridica { get; set; }

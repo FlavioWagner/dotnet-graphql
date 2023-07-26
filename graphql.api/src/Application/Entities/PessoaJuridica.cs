@@ -1,6 +1,6 @@
 ﻿namespace graphql.api.src.Application.Entities
 {
-    public partial class PessoaJuridica
+    public partial class PessoaJuridica : IEntity
     {
         public PessoaJuridica()
         {

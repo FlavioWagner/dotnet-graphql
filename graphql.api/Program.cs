@@ -1,9 +1,11 @@
+using AutoMapper;
 using graphql.api.src.Infraestructure.Data.Contexts;
 using graphql.api.src.Infraestructure.Data.Repositories.Abstractions;
 using graphql.api.src.Presentation.GraphQL.Interfaces;
 using graphql.api.src.Presentation.GraphQL.Mutations;
 using graphql.api.src.Presentation.GraphQL.Queries;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace graphql.api
 {
@@ -20,7 +22,10 @@ namespace graphql.api
             builder.Services.AddDbContext<BancoContext>(options =>
             {
                 options.UseNpgsql(database["DefaultConnection"]);
-            });          
+            });
+
+
+            builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             //add repositories
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
