@@ -4,6 +4,6 @@
     {
         T Add(T entity);
         Boolean Remove(long id);
-        T Update(long id,T entity);
+        T Update(T entity);
     }
 }

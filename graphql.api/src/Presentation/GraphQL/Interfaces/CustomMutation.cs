@@ -22,9 +22,9 @@ namespace graphql.api.src.Presentation.GraphQL.Interfaces
             return _repository.Remove(id);
         }
 
-        public T Update(long id, T entity)
+        public T Update(T entity)
         {
-            return _repository.Update(id, entity);
+            return _repository.Update(entity);
         }
     }
 }

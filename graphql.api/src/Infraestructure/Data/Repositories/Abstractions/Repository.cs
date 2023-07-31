@@ -1,21 +1,17 @@
 ﻿using AutoMapper;
 using graphql.api.src.Application.Entities;
 using graphql.api.src.Infraestructure.Data.Contexts;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 namespace graphql.api.src.Infraestructure.Data.Repositories.Abstractions
 {
-    public class Repository<T> : IRepository<T> where T : class,IEntity
+    public class Repository<T> : IRepository<T> where T : class, IEntity
     {
-        private readonly IMapper _mapper;
         private readonly BancoContext _context;
         public DbSet<T> _repository;
 
         public Repository(IMapper mapper,BancoContext context)
         {
-            _mapper = mapper;
             _context = context;
             _repository = _context.Set<T>();
         }
@@ -43,14 +39,15 @@ namespace graphql.api.src.Infraestructure.Data.Repositories.Abstractions
             if (entity != null)
             {
                 _repository.Remove(entity);
+                _context.SaveChanges(true);
                 return true;
             }
             return false;
         }
 
-        public T Update(long id, T entity)
+        public T Update(T entity)
         {
-            var UpdatedEntity = Get(id);
+            var UpdatedEntity = Get(entity.Id);
 
             if (UpdatedEntity != null)
             {

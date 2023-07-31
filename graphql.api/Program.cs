@@ -33,10 +33,12 @@ namespace graphql.api
 
             builder.Services.AddScoped<PessoaMutation>();
             builder.Services.AddScoped<PessoaFisicaMutation>();
+            builder.Services.AddScoped<RamoMutation>();
             builder.Services.AddScoped<Mutation>();
-
+             
             builder.Services.AddScoped<PessoaQuery>();
             builder.Services.AddScoped<PessoaFisicaQuery>();
+            builder.Services.AddScoped<RamoQuery>();
             builder.Services.AddScoped<Query>();
 
             builder.Services.AddGraphQLServer().AddQueryType<Query>().AddMutationType<Mutation>();

@@ -5,7 +5,7 @@
         IEnumerable<T> GetAll();        
         T Get(long id);
         T Add(T entity);
-        T Update(long id, T entity);
+        T Update(T entity);
         bool Remove(long id);
     }
 }
